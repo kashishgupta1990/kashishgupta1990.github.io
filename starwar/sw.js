@@ -6,14 +6,15 @@ this.addEventListener('install', function (event) {
 
             return cache.addAll([
                 '/',
-                '/index.html',
-                '/style.css',
-                '/app.js',
-                '/image-list.js',
-                '/star-wars-logo.jpg',
-                '/gallery/bountyHunters.jpg',
-                '/gallery/myLittleVader.jpg',
-                '/gallery/snowTroopers.jpg'
+                '/starwar',
+                '/starwar/index.html',
+                '/starwar/style.css',
+                '/starwar/app.js',
+                '/starwar/image-list.js',
+                '/starwar/star-wars-logo.jpg',
+                '/starwar/gallery/bountyHunters.jpg',
+                '/starwar/gallery/myLittleVader.jpg',
+                '/starwar/gallery/snowTroopers.jpg'
             ]);
         })
     );
