@@ -1,7 +1,7 @@
 // register service worker
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/starwar/sw.js', { scope: '/starwar' }).then(function(reg) {
+  navigator.serviceWorker.register('/starwar/sw.js', { scope: '/starwar/' }).then(function(reg) {
     
     if(reg.installing) {
       console.log('Service worker installing');
