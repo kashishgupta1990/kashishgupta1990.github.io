@@ -6,7 +6,7 @@ this.addEventListener('install', function (event) {
 
             return cache.addAll([
                 '/',
-                '/starwar',
+                '/starwar/',
                 '/starwar/index.html',
                 '/starwar/style.css',
                 '/starwar/app.js',
