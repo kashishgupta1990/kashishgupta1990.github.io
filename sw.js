@@ -19,13 +19,18 @@ this.addEventListener('install', function (event) {
 this.addEventListener('fetch', function (event) {
     var response;
 
-    console.log(event.request);
+    console.log(event.request.url);
 
+    // Getting response from the cache
     event.respondWith(caches.match(event.request)
         .catch(function () {
+
+            // First try to get directly from the network
             return fetch(event.request.url);
         })
         .then(function (r) {
+
+            //Updating the cache
             response = r;
             caches.open('v1').then(function (cache) {
                 cache.put(event.request, response);
