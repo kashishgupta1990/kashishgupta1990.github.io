@@ -22,25 +22,23 @@ this.addEventListener('install', function (event) {
 this.addEventListener('fetch', function (event) {
     var response;
 
-    console.log(event.request.url);
-
     // Getting response from the cache
     event.respondWith(caches.match(event.request)
         .catch(function () {
 
             // First try to get directly from the network
+
+            console.log('If cache doest not match then ',event.request.url);
             return fetch(event.request.url);
         })
         .then(function (r) {
-
             //Updating the cache
+
+            console.log('If successfully get data from the network then update cache');
             response = r;
             caches.open('v1').then(function (cache) {
                 cache.put(event.request, response);
             });
             return response.clone();
-        })
-        .catch(function () {
-            return caches.match('/gallery/myLittleVader.jpg');
         }));
 });
