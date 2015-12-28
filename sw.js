@@ -34,7 +34,7 @@ this.addEventListener('fetch', function (event) {
         .then(function (r) {
             //Updating the cache
 
-            console.log('If successfully get data from the network then update cache');
+            console.log('If successfully get data from the network then update cache ',event.request.url);
             response = r;
             caches.open('v1').then(function (cache) {
                 cache.put(event.request, response);
